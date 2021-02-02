@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import VueBulletChat from "./lib/vue-bullet-chat";
+  import VueBulletChat from "./views/vue-bullet-chat";
   export default {
     name: 'app',
     components: {VueBulletChat},
