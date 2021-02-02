@@ -144,8 +144,8 @@
             this.utils.showClass('vbc-icon-open')
           }
         }
-        // this.init()
-        // this.closeFun()
+        this.init()
+        this.closeFun()
       },
 
       init() {
@@ -213,7 +213,7 @@
             this.utils.showClass('vbc-icon-close')
           }
         }
-        // this.closeFun()
+        this.closeFun()
       },
       closeFun() {
         if(!this.clickFlag) {
