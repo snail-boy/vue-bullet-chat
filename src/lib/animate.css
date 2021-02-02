@@ -1,0 +1,80 @@
+
+/* -- common -- */
+.bullet-chat,
+.bullet-chat-mask {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.bullet-chat {
+    position: fixed;
+}
+
+.bullet-chat-mask {
+    position: absolute;
+    background: rgba(0, 0, 0, .3);
+}
+
+.bullet-chat-dialog {
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    margin: auto;
+    width: 100%;
+    height: 550px;
+    z-index: 101;
+    background: rgba(255, 255, 255, .4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* -- fade -- */
+
+@keyframes bullet-chat-fade-enter {
+    from {
+        opacity: 0;
+    }
+}
+
+.bullet-chat-fade-enter-active {
+    -webkit-animation: bullet-chat-fade-enter both ease-in;
+    animation: bullet-chat-fade-enter both ease-in;
+}
+
+@keyframes bullet-chat-fade-leave {
+    to {
+        opacity: 0
+    }
+}
+
+.bullet-chat-fade-leave-active {
+    -webkit-animation: bullet-chat-fade-leave both ease-out;
+    animation: bullet-chat-fade-leave both ease-out;
+}
+
+
+/*---slide----*/
+@keyframes bullet-chat-slide-enter {
+    from {
+        transform: translate(0, 200px);
+    }
+}
+
+.bullet-chat-slide-enter-active {
+    animation: bullet-chat-slide-enter both cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bullet-chat-slide-leave {
+    to {
+        transform: translate(0, 0px);
+    }
+}
+
+.bullet-chat-slide-leave-active {
+    animation: bullet-chat-slide-leave both cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+

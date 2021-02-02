@@ -1,0 +1,93 @@
+
+.vue-bullet-chat-wrapper .vbc-popup-top {
+    height: 35px;
+    color: #b5b5b5;
+    font-size: 13px;
+    transform: scale(1);
+    transition: all .3s;
+}
+.vue-bullet-chat-wrapper .vbc-popup-top .vbc-popup-top-active {
+    color: white;
+    transform: scale(1.2);
+}
+
+.vue-bullet-chat-wrapper .bullet-chat-content {
+    padding: 0 20px;
+    color: white;
+    font-size: 12px;
+}
+
+.vue-bullet-chat-wrapper .bullet-chat-cont-title {
+    margin: 8px auto;
+}
+
+.vue-bullet-chat-wrapper .content-item {
+    margin: 0 auto 20px;
+
+}
+
+.vue-bullet-chat-wrapper .cont-item {
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*word-break: keep-all;*/
+    /*overflow: auto;*/
+    width: 100%;
+}
+.vue-bullet-chat-wrapper .cont-item span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+.vue-bullet-chat-wrapper .cont-item .one-span {
+    border: 1px solid #3d3d3d;
+}
+
+.vue-bullet-chat-wrapper .cont-item .one-span.active  {
+    border: 1px solid white;
+}
+
+
+.vue-bullet-chat-wrapper .cont-item .two-span {
+    width: 40px;
+    height: 40px;
+    box-shaow: 0 0 0 1px transparent, 0 0 0 2px transparent;
+}
+
+
+.vue-bullet-chat-wrapper .cont-item .two-span.activeColor {
+    box-shadow: 0 0 0 1px black, 0 0 0 2px white;
+}
+
+
+
+
+/*效果*/
+
+
+/*双层*/
+.vbc-text-double {
+    text-shadow: 4px 4px 10px brown;
+}
+
+.vbc-text-shadow {
+    text-shadow: 0 0 10px;
+}
+
+.vbc-text-twinkle {
+    animation: twinkle .2s infinite;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: .3;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,23 @@
+.vbc-flex-sb {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.vbc-flex-sb-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input::placeholder {
+    font-size: 24px;
+    line-height: 100px;
+    vertical-align: baseline;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
