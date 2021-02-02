@@ -1,8 +1,8 @@
 
 .vue-bullet-chat-wrapper .vbc-popup-top {
-    height: 35px;
+    height: 70px;
     color: #b5b5b5;
-    font-size: 13px;
+    font-size: 26px;
     transform: scale(1);
     transition: all .3s;
 }
@@ -18,7 +18,7 @@
 }
 
 .vue-bullet-chat-wrapper .bullet-chat-cont-title {
-    margin: 8px auto;
+    margin: 10px auto;
 }
 
 .vue-bullet-chat-wrapper .content-item {
@@ -35,12 +35,13 @@
 }
 .vue-bullet-chat-wrapper .cont-item span {
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    margin-right: 40px;
+    margin-bottom: 20px;
     text-align: center;
-    line-height: 40px;
+    line-height: 80px;
     box-sizing: border-box;
 }
 
@@ -54,14 +55,14 @@
 
 
 .vue-bullet-chat-wrapper .cont-item .two-span {
-    width: 40px;
-    height: 40px;
-    box-shaow: 0 0 0 1px transparent, 0 0 0 2px transparent;
+    width: 80px;
+    height: 80px;
+    box-shaow: 0 0 0 2px transparent, 0 0 0 4px transparent;
 }
 
 
 .vue-bullet-chat-wrapper .cont-item .two-span.activeColor {
-    box-shadow: 0 0 0 1px black, 0 0 0 2px white;
+    box-shadow: 0 0 0 2px black, 0 0 0 4px white;
 }
 
 

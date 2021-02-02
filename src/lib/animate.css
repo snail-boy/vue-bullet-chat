@@ -24,12 +24,12 @@
     bottom: -40px;
     margin: auto;
     width: 100%;
-    height: 550px;
+    height: 950px;
     z-index: 101;
     background: rgba(255, 255, 255, .4);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
 }
 
 /* -- fade -- */

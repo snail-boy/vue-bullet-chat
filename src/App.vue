@@ -5,22 +5,26 @@
 </template>
 
 <script>
-import VueBulletChat from "./lib/vue-bullet-chat";
-export default {
-  name: 'app',
-  components: {VueBulletChat},
-  data () {
-    return {
+  import VueBulletChat from "./lib/vue-bullet-chat";
+  export default {
+    name: 'app',
+    components: {VueBulletChat},
+    data () {
+      return {
 
+      }
     }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
 </style>

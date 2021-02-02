@@ -137,7 +137,7 @@
       }
     },
     mounted() {
-      this.textOpt = this.utils.get('textOpt', true)
+      this.textOpt = this.utils.get('textOpt', true) || this.textOpt
     },
     methods: {
       handleClickTop(v) {

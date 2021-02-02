@@ -246,8 +246,8 @@
       },
 
       getText() {
-        this.color = this.utils.get('vbcColor')
-        this.textClass = this.utils.get('vbcEffect')
+        this.color = this.utils.get('vbcColor') || this.color
+        this.textClass = this.utils.get('vbcEffect') || this.fontSize
       }
 
     }
