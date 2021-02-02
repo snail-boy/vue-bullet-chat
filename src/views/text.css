@@ -27,11 +27,8 @@
 }
 
 .vue-bullet-chat-wrapper .cont-item {
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*word-break: keep-all;*/
-    /*overflow: auto;*/
     width: 100%;
+    margin-bottom: 20px;
 }
 .vue-bullet-chat-wrapper .cont-item span {
     display: inline-block;
@@ -39,9 +36,9 @@
     height: 80px;
     border-radius: 16px;
     margin-right: 40px;
-    margin-bottom: 20px;
     text-align: center;
     line-height: 80px;
+    margin-bottom: 20px;
     box-sizing: border-box;
 }
 
@@ -71,7 +68,6 @@
 /*效果*/
 
 
-/*双层*/
 .vbc-text-double {
     text-shadow: 4px 4px 10px brown;
 }
@@ -83,6 +79,12 @@
 .vbc-text-twinkle {
     animation: twinkle .2s infinite;
 }
+
+.vbc-text-stroke {
+    -webkit-text-stroke: 1px white;
+}
+
+
 
 @keyframes twinkle {
     0% {

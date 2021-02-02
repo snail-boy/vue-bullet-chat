@@ -31,7 +31,14 @@
         </svg>
       </div>
     </div>
-    <vue-bullet-chat-popup :vbc-popup-vis-able.sync="vbcPopupVisAble" :animation="animation"  @effect="getEffect" @color="getColor" />
+    <vue-bullet-chat-popup
+            :vbc-popup-vis-able.sync="vbcPopupVisAble"
+            :animation="animation"
+            @effect="getEffect"
+            @color="getColor"
+            @speed="getSpeed"
+            @fontSize="getFontSize"
+    />
   </div>
 </template>
 
@@ -57,10 +64,6 @@
             letterSpacing: '8px'
           }
         }
-      },
-      speed: {
-        type: Number,
-        default: 2
       }
     },
     data() {
@@ -89,8 +92,11 @@
         vbcPopupVisAble: false,
         animation: '',
         color: 'white',
-        fontSize: '80px',
-        textClass: ''
+        fontSize: '48px',
+        textClass: '',
+        speed: 2,
+        requestAnimationFrame: '',
+        cancelAnimationFrame: ''
       }
     },
     watch: {
@@ -112,10 +118,16 @@
       }
     },
     mounted() {
+
       this.utils.fitIos()
       this.getEle()
       this.getText()
     },
+
+    beforeDestroy() {
+      window.cancelAnimationFrame(this.reqAnFrame)
+    },
+
     methods: {
       getEle() {
         this.el = this.utils.classEle('vue-bullet-chat-wrapper')
@@ -156,33 +168,24 @@
       },
 
       move() {
-        let requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-        let cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
-        cancelAnimationFrame(this.reqAnFrame)
-        this.reqAnFrame = requestAnimationFrame(() => {
-          this.execute()
-        })
-      },
-      execute() {
-        this.moveInstance()
-        this.move()
-      },
-      moveInstance() {
         this.initBottom -= this.speed
         this.textWrapper.style.transform = 'translateY('+ this.initBottom + 'px)' + this.initTransform // 初始化文字位置
         if ( this.initBottom <= -this.initBottomCopy ) {
           this.initBottom = this.initBottomCopy
           this.i = 0
-          this.textWrapper.style.transform = 'translateY('+ this.initBottomCopy + 'px)' + this.initTransform
         }
+        this.reqAnFrame = window.requestAnimationFrame(this.move)
       },
+
       handleInput() {
+        window.cancelAnimationFrame(this.reqAnFrame)
         if(this.setValue) {
           this.value = this.setValue
         }else {
           this.value = '请输入文字显示文字弹幕'
           this.utils.removeClass(this.closeIcon, 'vbc-close-active')
         }
+
         this.$refs.inputBox.blur()
         this.bulletChatClick()
         setTimeout(() => {
@@ -245,11 +248,33 @@
         this.textClass = v
       },
 
+      getFontSize(v) {
+        this.fontSize = v
+        window.cancelAnimationFrame(this.reqAnFrame)
+        setTimeout(() => {
+          this.init()
+        }, 20)
+      },
+
       getText() {
         this.color = this.utils.get('vbcColor') || this.color
         this.textClass = this.utils.get('vbcEffect') || this.fontSize
-      }
+        this.speed = +this.utils.get('vbcSpeed') || +this.speed
+        this.fontSize = this.utils.get('vbcFontSize') || this.fontSize
+      },
 
+      getSpeed(v) {
+        this.speed = +v
+        if(v === '0') {
+          window.cancelAnimationFrame(this.reqAnFrame)
+          this.reqAnFrame = null
+        }else {
+          window.cancelAnimationFrame(this.reqAnFrame)
+          setTimeout(() => {
+            this.init()
+          }, 20)
+        }
+      }
     }
   }
 </script>

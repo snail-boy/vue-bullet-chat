@@ -1,5 +1,21 @@
 import Vue from 'vue'
 import App from './App.vue'
+import fastClick from 'fastclick'
+
+
+const str = navigator.userAgent.toLowerCase()
+const ver = str.match(/cpu iphone os (.*?) like mac os/)
+
+if (!ver) { // 非IOS系统
+            // 引入fastclick 做相关处理
+  fastClick.attach(document.body)
+} else {
+  if (parseInt(ver[1]) < 11) {
+    // 引入fastclick 做相关处理
+    fastClick.attach(document.body)
+  }
+}
+
 
 Vue.config.productionTip = false
 

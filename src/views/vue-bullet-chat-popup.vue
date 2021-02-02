@@ -13,7 +13,7 @@
             <div v-for="(item, index) in textOpt" :key="index" class="content-item">
               <p class="bullet-chat-cont-title">{{item.header}}</p>
               <div class="cont-item">
-                <span v-for="(spanItem, i) in item.selectOpt" :key="i" :class="{'one-span':item.type === 1, 'two-span': item.type === 2, active: spanItem.active, activeColor: spanItem.active }" :style="{background: spanItem.background}" @click="handleSpan(spanItem, index)">
+                <span v-for="(spanItem, i) in item.selectOpt" :key="i" :class="{'one-span':item.type === 1, 'two-span': item.type === 2 || item.type === 3 || item.type === 4, active: spanItem.active, activeColor: spanItem.active }" :style="{background: spanItem.background}" @click="handleSpan(spanItem, index)">
                   {{spanItem.label}}
                 </span>
               </div>
@@ -49,7 +49,7 @@
           selectOpt: [{
             label: '阴影',
             value: 'vbc-text-shadow',
-            active: true,
+            active: false,
             background: '#3d3d3d'
           }, {
             label: '叠字',
@@ -59,6 +59,11 @@
           }, {
             label: '闪烁',
             value: 'vbc-text-twinkle',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '描边',
+            value: 'vbc-text-stroke',
             active: false,
             background: '#3d3d3d'
           }]
@@ -116,6 +121,64 @@
             active: false,
             background: '#65FFC9'
           }]
+        }, {
+          header: '速度',
+          type: 3,
+          selectOpt: [{
+            label: '静止',
+            value: '0',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '0.5x',
+            value: '1',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '1x',
+            value: '2',
+            active: true,
+            background: '#3d3d3d'
+          }, {
+            label: '1.5x',
+            value: '3',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '2x',
+            value: '4',
+            active: false,
+            background: '#3d3d3d'
+          }]
+        }, {
+          header: '字号',
+          type: 4,
+          selectOpt: [{
+            label: '24',
+            value: '24',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '36',
+            value: '36',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '48',
+            value: '48',
+            active: true,
+            background: '#3d3d3d'
+          }, {
+            label: '64',
+            value: '64',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '72',
+            value: '72',
+            active: false,
+            background: '#3d3d3d'
+          }]
         }]
       }
     },
@@ -161,8 +224,13 @@
         } else if(index === 1) {
           this.$emit('color', item.background)
           this.utils.set('vbcColor', item.background)
+        }else if(index === 2) {
+          this.$emit('speed', item.value)
+          this.utils.set('vbcSpeed', item.value)
+        }else if (index === 3) {
+          this.$emit('fontSize', item.value + 'px')
+          this.utils.set('vbcFontSize', item.value + 'px')
         }
-
         this.utils.set('textOpt', JSON.stringify(this.textOpt))
       },
     }
