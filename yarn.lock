@@ -23,6 +23,11 @@
     "chalk" "^2.0.0"
     "js-tokens" "^4.0.0"
 
+"@bugsnag/safe-json-stringify@^5.0.0":
+  "integrity" "sha512-EdGnA7n2UmX9Z0e2tIU0biKz8tCgtjbY69KoyH3yiMzm7Q9sriIlN9bZjqhTOKzM0GdLSGrkyKWif08xWKyucA=="
+  "resolved" "https://registry.npmjs.org/@bugsnag/safe-json-stringify/-/safe-json-stringify-5.0.0.tgz"
+  "version" "5.0.0"
+
 "@hapi/address@2.x.x":
   "integrity" "sha1-XWftQ/P9QaadS5/3tW58DR0KgeU="
   "resolved" "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.1.4.tgz?cache=0&sync_timestamp=1603524710662&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hapi%2Faddress%2Fdownload%2F%40hapi%2Faddress-2.1.4.tgz"
@@ -2741,6 +2746,23 @@
   "integrity" "sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0="
   "resolved" "https://registry.npm.taobao.org/function-bind/download/function-bind-1.1.1.tgz"
   "version" "1.1.1"
+
+"fundebug-javascript@^2.4.2":
+  "integrity" "sha512-ZGb4EeL/3uVC/t4B/GXBN4MQAXv0YjJ5vgXp/gxPkn7UHK+9c4jaC8DdiPbZZ2Quls7A5CvF/JLz9lAiuSc6rg=="
+  "resolved" "https://registry.npmjs.org/fundebug-javascript/-/fundebug-javascript-2.4.2.tgz"
+  "version" "2.4.2"
+  dependencies:
+    "@bugsnag/safe-json-stringify" "^5.0.0"
+
+"fundebug-revideo@^0.6.2":
+  "integrity" "sha512-mz7iNE2GpWsp6h2yCPZp/Gkwgf7j1x0N9w6ipxh6o4sucTubqo/A/gPPgdTlLuS7Lo2jiOTAS80Kg+OJiQTDag=="
+  "resolved" "https://registry.npmjs.org/fundebug-revideo/-/fundebug-revideo-0.6.2.tgz"
+  "version" "0.6.2"
+
+"fundebug-vue@^0.0.1":
+  "integrity" "sha512-dk6D5FASmvhUwepc5SL6221B9NHw6hZ7ZLU/nWuyRcrBrrOWbxiH30CrEYwr6VK76UlUb6mpJ+Mzr2r7sfqk8w=="
+  "resolved" "https://registry.npmjs.org/fundebug-vue/-/fundebug-vue-0.0.1.tgz"
+  "version" "0.0.1"
 
 "get-caller-file@^2.0.1", "get-caller-file@^2.0.5":
   "integrity" "sha1-T5RBKoLbMvNuOwuXQfipf+sDH34="

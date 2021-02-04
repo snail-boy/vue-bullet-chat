@@ -113,7 +113,8 @@
         return {
           ...this.textObj,
           color: this.color,
-          fontSize: this.fontSize
+          fontSize: this.fontSize,
+          opacity: 0
         }
       }
     },
@@ -138,7 +139,6 @@
         this.lockOpen = this.utils.classEle('vbc-icon-open')
         this.inputBox = this.utils.classEle('input-box')
         this.initTransform = this.utils.deepClone(this.textWrapper.style.transform)
-
         this.closeIcon = this.utils.classEle('vbc-close-box')
 
         // 设置锁
@@ -161,6 +161,7 @@
       },
 
       init() {
+        this.textWrapper.style.opacity = '1'
         this.initBottom = Math.round(window.innerHeight / 2 + this.textWrapper.getBoundingClientRect().height / 2)
         this.initBottomCopy = this.utils.deepClone(this.initBottom)
         this.textWrapper.style.transform = 'translateY('+ this.initBottom + 'px)' + this.initTransform // 初始化文字位置
@@ -178,6 +179,7 @@
       },
 
       handleInput() {
+        this.textWrapper.style.opacity = '0'
         window.cancelAnimationFrame(this.reqAnFrame)
         if(this.setValue) {
           this.value = this.setValue
@@ -190,7 +192,7 @@
         this.bulletChatClick()
         setTimeout(() => {
           this.init()
-        }, 20)
+        }, 100)
       },
 
       bulletChatClick() {
@@ -249,11 +251,12 @@
       },
 
       getFontSize(v) {
+        this.textWrapper.style.opacity = '0'
         this.fontSize = v
         window.cancelAnimationFrame(this.reqAnFrame)
         setTimeout(() => {
           this.init()
-        }, 20)
+        }, 100)
       },
 
       getText() {
@@ -264,6 +267,7 @@
       },
 
       getSpeed(v) {
+        this.textWrapper.style.opacity = '0'
         this.speed = +v
         if(v === '0') {
           window.cancelAnimationFrame(this.reqAnFrame)
@@ -272,7 +276,7 @@
           window.cancelAnimationFrame(this.reqAnFrame)
           setTimeout(() => {
             this.init()
-          }, 20)
+          }, 100)
         }
       }
     }
@@ -283,6 +287,7 @@
     font-size: 24px;
     line-height: 100px;
     vertical-align: baseline;
+    color: red;
   }
 </style>
 
