@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import fastClick from 'fastclick'
-// require('fundebug-revideo');
-import * as fundebug from "fundebug-javascript";
-import fundebugVue from "fundebug-vue";
-fundebug.apikey = "c02071e2d19b0a2a7d6bcf476e1866d75fa4900c85f6f44d66408bd3e28a8855"
-fundebugVue(fundebug, Vue);
+
 
 const str = navigator.userAgent.toLowerCase()
 const ver = str.match(/cpu iphone os (.*?) like mac os/)
@@ -20,7 +16,6 @@ if (!ver) { // 非IOS系统
   }
 }
 
-fundebug.test()
 
 
 Vue.config.productionTip = false

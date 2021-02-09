@@ -19,7 +19,7 @@
 
 <style>
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family:"Comic Sans MS","幼圆","黑体",sans-serif;
     margin: 0;
     padding: 0;
   }

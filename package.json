@@ -7,10 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "fastclick": "^1.0.6",
-    "fundebug-javascript": "^2.4.2",
-    "fundebug-revideo": "^0.6.2",
-    "fundebug-vue": "^0.0.1",
+    "fonts.css": "^2.0.0",
+    "rrweb": "^0.9.14",
     "vue": "^2.6.11"
   },
   "devDependencies": {

@@ -46,7 +46,7 @@
   import VueBulletChatPopup from "./vue-bullet-chat-popup";
   export default {
     name: "vue-bullet-chat",
-    components: {VueBulletChatPopup},
+    components: { VueBulletChatPopup },
     props: {
       background: {
         type: Object,
@@ -119,11 +119,11 @@
       }
     },
     mounted() {
-
       this.utils.fitIos()
       this.getEle()
       this.getText()
     },
+
 
     beforeDestroy() {
       window.cancelAnimationFrame(this.reqAnFrame)
@@ -156,8 +156,16 @@
             this.utils.showClass('vbc-icon-open')
           }
         }
-        this.init()
-        this.closeFun()
+
+        // 点击清空
+
+        this.closeIcon.onclick = () => {
+          this.setValue = ''
+          this.$refs.inputBox.focus()
+        }
+
+        // this.init()
+        // this.closeFun()
       },
 
       init() {
@@ -223,7 +231,7 @@
       closeFun() {
         if(!this.clickFlag) {
           clearTimeout(this.closeTimer)
-          this.closeTimer = setTimeout(() => {
+          this.closeTimer = setTimeout( () => {
             this.utils.removeClass(this.inputWrapper, 'vbc-input-wrapper-active')
             this.utils.addClass(this.lockWrapper, 'lock-wrapper-active')
             this.clickFlag = true
@@ -260,10 +268,10 @@
       },
 
       getText() {
-        this.color = this.utils.get('vbcColor') || this.color
-        this.textClass = this.utils.get('vbcEffect') || this.fontSize
-        this.speed = +this.utils.get('vbcSpeed') || +this.speed
-        this.fontSize = this.utils.get('vbcFontSize') || this.fontSize
+        // this.color = this.utils.get('vbcColor') || this.color
+        // this.textClass = this.utils.get('vbcEffect') || this.fontSize
+        // this.speed = +this.utils.get('vbcSpeed') || +this.speed
+        // this.fontSize = this.utils.get('vbcFontSize') || this.fontSize
       },
 
       getSpeed(v) {
@@ -283,11 +291,11 @@
   }
 </script>
 <style scoped>
-  input::placeholder {
+  .input-box::placeholder {
     font-size: 24px;
     line-height: 100px;
     vertical-align: baseline;
-    color: red;
+    color: blue;
   }
 </style>
 

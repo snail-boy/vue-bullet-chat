@@ -1,6 +1,6 @@
 <template>
   <transition name="bullet-chat-fade">
-    <div v-show="vbcPopupVisAble" tabindex="-1" :style="style" :class="['vodal']" @click.stop>
+    <div v-show="vbcPopupVisAble" tabindex="-1" :style="style" class="bullet-chat-popup" @click.stop>
       <div class="bullet-chat-mask" @click="handleClick"></div>
       <transition name="bullet-chat-slide">
         <div class="bullet-chat-dialog" v-show="show" :style="dialogStyle">
@@ -64,6 +64,11 @@
           }, {
             label: '描边',
             value: 'vbc-text-stroke',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '酷炫',
+            value: 'vbc-text-masked',
             active: false,
             background: '#3d3d3d'
           }]
@@ -176,6 +181,25 @@
           }, {
             label: '72',
             value: '72',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '120',
+            value: '120',
+            active: false,
+            background: '#3d3d3d'
+          }]
+        }, {
+          header: '字体',
+          type: 5,
+          selectOpt: [{
+            label: '宋体',
+            value: '宋体',
+            active: false,
+            background: '#3d3d3d'
+          }, {
+            label: '宋体',
+            value: '宋体',
             active: false,
             background: '#3d3d3d'
           }]
