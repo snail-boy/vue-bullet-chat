@@ -164,8 +164,8 @@
           this.$refs.inputBox.focus()
         }
 
-        // this.init()
-        // this.closeFun()
+        this.init()
+        this.closeFun()
       },
 
       init() {
